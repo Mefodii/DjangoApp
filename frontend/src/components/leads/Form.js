@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { addLead } from "../../actions/leads";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addLead } from '../../actions/leads';
 
 export class Form extends Component {
   state = {
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   };
 
   static propTypes = {
@@ -22,15 +22,14 @@ export class Form extends Component {
     const lead = { name, email, message };
     this.props.addLead(lead);
     this.setState({
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     });
   };
 
   render() {
     const { name, email, message } = this.state;
-
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Lead</h2>
@@ -46,7 +45,7 @@ export class Form extends Component {
             />
           </div>
           <div className="form-group">
-            <label>E-Mail</label>
+            <label>Email</label>
             <input
               className="form-control"
               type="email"
@@ -57,7 +56,7 @@ export class Form extends Component {
           </div>
           <div className="form-group">
             <label>Message</label>
-            <input
+            <textarea
               className="form-control"
               type="text"
               name="message"
